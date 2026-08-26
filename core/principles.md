@@ -10,7 +10,7 @@ Operational defaults for agents **before first edit**. Not a textbook — pointe
 
 - Name **nouns** (entities, roles, value objects) and **verbs** (use cases) before growing procedures.
 - **One job per type** — facades/router thin; state owned once (no hidden shared mutable soup).
-- File/method pressure → **split by responsibility**, not `partial` by default.
+- File/method pressure → **OOA&D pass** (nouns → types by responsibility), not `partial` as metric peel.
 - Depth: `read_knowledge_file` → `playbook-ooad-agent-operational-v1.md` (software.authoring).
 
 ## KISS

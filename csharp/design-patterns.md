@@ -12,7 +12,20 @@ Language-aware **how** for org C#. Project canon wins on product UI/rules.
 - **Facade** → static or small service class; no 400-line «page builder» methods.
 - **Port** → `interface` at boundary; infra implements in outer ring.
 - **Value** → `record` (positional or property) — equality by value, immutable when possible.
-- **`partial`** — mechanical split only (generated, huge switch); not default for FileLines pressure.
+- **`partial`** — **narrow case only** (see below); FileLines warn → OOA&D first, not dotted peels.
+
+## When `partial` is OK (narrow)
+
+- Tooling/codegen: `.g.cs`, designer, source generator — one type, compiler requires multiple files.
+- Rare **hand** split of **one** type across files when a single `class` is genuinely required (not a seam substitute).
+
+## When `partial` is wrong
+
+- **Metric peel:** `TypeName.Something.cs` to silence `file_lines` / SoftFL — `partial ≠ split`.
+- **Partial family:** many dotted partials on one type without new named types (`partial_family` gate).
+- **Seeming seam:** another `Foo.Bar.cs` instead of extract class / polymorphism / facade.
+
+Depth: `playbook-ooad-agent-operational-v1.md` · habitat `quality` domain (`partial_family` tooth).
 
 ## Composition over inheritance
 
