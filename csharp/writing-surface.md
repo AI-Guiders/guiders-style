@@ -14,7 +14,7 @@ See also: `design-patterns.md` (OOA&D/SOLID → C# mechanics) · `../core/princi
 - XML docs on public plugin surfaces; internal = minimal
 - Tests: xunit; name `Method_Scenario_Expectation`
 - Human View (Forge): Kit + Razor — see `agent-forge/.cdp/canon.md`
-- Dependencies: **proven libs over hand-roll** — `../core/principles.md`; area picks e.g. `cli.md` (Ookii.CommandLine)
+- Dependencies: **proven libs over hand-roll** — `../core/principles.md`; lang files list **current** defaults (e.g. `cli.md`) — supersede when something better ships
 
 ## Don't
 

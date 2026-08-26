@@ -39,11 +39,12 @@ Operational defaults for agents **before first edit**. Not a textbook — pointe
 
 ## Proven building blocks (don't invent the bicycle)
 
-- **General rule:** solved problem + **compatible, maintained library** (or platform API) → **use it**, not a hand-rolled «велосипед» — whether CLI, JSON, HTTP, logging, crypto, parsing, retries, or anything else with a stable ecosystem answer.
-- **.NET stack:** prefer packages that target **net10** (or multi-target including net10). Lib on an older TFM only is **fine** if it runs on our runtime without hacks — compatibility beats purism; don't block ship for ideology.
-- **Check first:** `guiders-style` lang surfaces, project `.cdp/canon.md`, federation dogfood — org pick before random NuGet/PyPI.
-- **Hand-roll only when:** no acceptable fit, hard constraint (license, size, trim/AOT, air-gap, toxic transitive deps), or logic is genuinely domain-specific.
-- New dependency → pinned version, license OK, one line *why this lib* (README/ADR). Per-area defaults live in lang files (e.g. `csharp/cli.md`) — core stays the rule, not a package catalog.
+- **General rule:** solved problem + **compatible, maintained library** (or platform API) → **use it**, not a hand-rolled «велосипед» — CLI, JSON, HTTP, logging, crypto, parsing, retries, anything with a stable ecosystem answer.
+- **.NET stack:** prefer packages that target **net10** (or multi-target including net10). Older TFM-only lib is **fine** if it runs on our runtime without hacks — compatibility beats purism.
+- **Org picks** (`guiders-style` lang files, `.cdp/canon.md`, dogfood) = **shortcuts**, not a cage — check them so we don't rediscover the same wheel; **not mandatory** if something else is clearly better.
+- **Better / newer is welcome:** agent, NuGet, upstream docs, or a sibling repo may surface a stronger package — take it when justified (maintained, compatible, license OK). Brief *why this over default* in PR/README; **update the org pick** when the new choice sticks.
+- **Hand-roll only when:** no acceptable lib, hard constraint (license, trim/AOT, air-gap, toxic transitive deps), or genuinely domain-specific logic.
+- New dependency → pinned version, license OK. Lang files (e.g. `csharp/cli.md`) record current defaults — living list, not frozen law.
 
 ## When to go deeper
 

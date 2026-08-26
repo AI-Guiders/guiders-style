@@ -6,9 +6,9 @@ see: `../core/principles.md` (**proven building blocks** — general rule; this 
 
 ## Rule
 
-CLI argv is a **solved problem** — apply org principle *Proven building blocks*; do not hand-roll `GetCommandLineArgs()` loops.
+CLI argv is a **solved problem** — apply *Proven building blocks*; do not hand-roll `GetCommandLineArgs()` loops.
 
-## Default (org)
+## Current default (org)
 
 **[Ookii.CommandLine](https://www.nuget.org/packages/Ookii.CommandLine) 5.x**
 
@@ -39,6 +39,8 @@ if (cli is null) return 1;
 ```
 
 When the CLI gains subcommands, validation, or tests → **promote to a small `Exe` project** (same Ookii type; drop `#r`).
+
+**Not locked forever** — if a better-maintained parser fits (e.g. heavy subcommand trees → System.CommandLine), propose it; update this file when adopted.
 
 ## Alternatives (explicit opt-in)
 
