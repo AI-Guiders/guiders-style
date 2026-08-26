@@ -16,14 +16,18 @@ Language-aware **how** for org C#. Project canon wins on product UI/rules.
 
 ## When `partial` is OK (narrow)
 
-- Tooling/codegen: `.g.cs`, designer, source generator — one type, compiler requires multiple files.
-- Rare **hand** split of **one** type across files when a single `class` is genuinely required (not a seam substitute).
+`partial` уместен, когда есть **явная граница внедрения**, а не когда файл «слишком длинный»:
+
+1. **Generated injection point** — source generator / designer / `.g.cs` вставляет код в **один** тип; руками правим только разрешённый `partial` слой.
+2. **Framework / client split** — фреймворк даёт **базовый слой** (логика, контракт, sealed core); клиентский код живёт в `partial`, **не трогая** базовую логику фреймворка.
+
+Если границы нет — это не `partial`, это сигнал к **новому типу** (OOA&D).
 
 ## When `partial` is wrong
 
-- **Metric peel:** `TypeName.Something.cs` to silence `file_lines` / SoftFL — `partial ≠ split`.
-- **Partial family:** many dotted partials on one type without new named types (`partial_family` gate).
-- **Seeming seam:** another `Foo.Bar.cs` instead of extract class / polymorphism / facade.
+- **Metric peel:** `TypeName.Something.cs` ради `file_lines` / SoftFL — `partial ≠ split`.
+- **Partial family:** много dotted partials без framework/gen boundary (`partial_family` gate).
+- **Fake seam:** ещё один `Foo.Bar.cs` вместо extract class / polymorphism / facade.
 
 Depth: `playbook-ooad-agent-operational-v1.md` · habitat `quality` domain (`partial_family` tooth).
 
