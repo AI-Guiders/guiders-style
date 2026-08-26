@@ -2,11 +2,11 @@
 
 rev: 2026-08-26
 pin: `guiders-style@v1`
-see: `../core/principles.md` (proven building blocks) · `writing-surface.md` · dogfood: `AIGuiders.DotnetTools.PublishFixedTarget`
+see: `../core/principles.md` (**proven building blocks** — general rule; this file is one area pick) · `writing-surface.md` · dogfood: `AIGuiders.DotnetTools.PublishFixedTarget`
 
 ## Rule
 
-**Do not hand-roll `Environment.GetCommandLineArgs()` loops** — CLI parsing is a solved problem; see org principle *Proven building blocks* in `core/principles.md`.
+CLI argv is a **solved problem** — apply org principle *Proven building blocks*; do not hand-roll `GetCommandLineArgs()` loops.
 
 ## Default (org)
 

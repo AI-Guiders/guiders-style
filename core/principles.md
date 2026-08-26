@@ -37,12 +37,13 @@ Operational defaults for agents **before first edit**. Not a textbook — pointe
 
 - Vertical slice that ships; no «v1 stub» unless explicitly requested.
 
-## Proven building blocks (no bicycle inventing)
+## Proven building blocks (don't invent the bicycle)
 
-- For **solved problems** (CLI argv, JSON/XML, HTTP client, logging, config, crypto primitives) — take a **battle-tested library, platform API, or org default**; do not hand-roll loops and parsers «потому что быстрее написать».
-- **Check first:** `guiders-style` (lang surfaces), project `.cdp/canon.md`, dogfooded repos in the federation — reuse before adding a new pattern.
-- **Hand-roll only when:** no acceptable fit, hard constraint (license, size, AOT, air-gap), or logic is genuinely domain-specific with no stable off-the-shelf piece.
-- New dependency → pinned version, license OK, one line *why not roll-your-own* (README or ADR). Depth: lang files (e.g. `csharp/cli.md`) list org picks per area.
+- **General rule:** solved problem + **compatible, maintained library** (or platform API) → **use it**, not a hand-rolled «велосипед» — whether CLI, JSON, HTTP, logging, crypto, parsing, retries, or anything else with a stable ecosystem answer.
+- **.NET stack:** prefer packages that target **net10** (or multi-target including net10). Lib on an older TFM only is **fine** if it runs on our runtime without hacks — compatibility beats purism; don't block ship for ideology.
+- **Check first:** `guiders-style` lang surfaces, project `.cdp/canon.md`, federation dogfood — org pick before random NuGet/PyPI.
+- **Hand-roll only when:** no acceptable fit, hard constraint (license, size, trim/AOT, air-gap, toxic transitive deps), or logic is genuinely domain-specific.
+- New dependency → pinned version, license OK, one line *why this lib* (README/ADR). Per-area defaults live in lang files (e.g. `csharp/cli.md`) — core stays the rule, not a package catalog.
 
 ## When to go deeper
 
