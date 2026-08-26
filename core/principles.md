@@ -1,10 +1,24 @@
 # Org design principles (L1 core)
 
-rev: 2026-08-26
+rev: 2026-08-26b
 pin: `guiders-style@v1`
 budget: ~600 tokens in route · depth via KB on demand
 
 Operational defaults for agents **before first edit**. Not a textbook — pointers for when stuck.
+
+## One model per layer (maintainability)
+
+- **One obvious way** to do the same job **at the same abstraction layer** — not one dialect for the whole repo, but **no parallel dialects** for the same concern (two ways to render a table, two API styles for one operation).
+- **Stratify by responsibility** (UI vs renderer vs domain vs wire), not by «исторически так написали».
+- **Why:** agents rotate; humans onboard; support and handoff cost dominate long-run. Structured, intuitive layout beats clever dual paths.
+- **Project canon** (L2) names the concrete model for that product (e.g. Razor markup for Human UI). Org principle = enforce **single model per layer**; project canon = **which** model.
+
+## Patterns = compressed meaning (standardization)
+
+- Patterns exist **not** for cleverness — for **shared vocabulary** and faster transfer of intent («abstract factory» → family of products, construction seam, test doubles at boundary).
+- Use a named pattern when it **reduces explanation**; skip when it adds ceremony without a reader who knows the name.
+- **Golden files** + canon §anti-patterns = project-local pattern names (where to look, what shape to copy).
+- Depth: `guiders-style/csharp/design-patterns.md` (C# shapes); KB OOA&D for noun/verb modeling.
 
 ## OOA&D (model before code)
 

@@ -1,10 +1,16 @@
 # C# — design patterns (L1 lang)
 
-rev: 2026-08-26
+rev: 2026-08-26b
 pin: `guiders-style@v1`
 see: `../core/principles.md` (OOA&D, SOLID, DRY, KISS)
 
 Language-aware **how** for org C#. Project canon wins on product UI/rules.
+
+## Why patterns (org)
+
+GoF / enterprise names are **compression** — they bundle structure, constraints, and expectations so reviewer and implementer align without a spec paragraph. Prefer a known pattern over a one-off «clever» layout when the problem class matches.
+
+**Not** pattern theater: if the name does not shorten the conversation, use plain types and a one-line comment on the seam only when non-obvious.
 
 ## OOA&D → C# shapes
 
