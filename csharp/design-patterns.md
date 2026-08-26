@@ -12,21 +12,36 @@ Language-aware **how** for org C#. Project canon wins on product UI/rules.
 - **Facade** → static or small service class; no 400-line «page builder» methods.
 - **Port** → `interface` at boundary; infra implements in outer ring.
 - **Value** → `record` (positional or property) — equality by value, immutable when possible.
-- **`partial`** — **narrow case only** (see below); FileLines warn → OOA&D first, not dotted peels.
 
-## When `partial` is OK (narrow)
+## `partial` class (C#) — not Razor partial
 
-`partial` уместен, когда есть **явная граница внедрения**, а не когда файл «слишком длинный»:
+Razor **view partials** (`Pages/Shared/*.cshtml`) — другой механизм; см. project canon (Kit). Здесь только C# `partial class`.
 
-1. **Generated injection point** — source generator / designer / `.g.cs` вставляет код в **один** тип; руками правим только разрешённый `partial` слой.
-2. **Framework / client split** — фреймворк даёт **базовый слой** (логика, контракт, sealed core); клиентский код живёт в `partial`, **не трогая** базовую логику фреймворка.
+FileLines warn → **OOA&D first** (nouns → types), not dotted peels.
 
-Если границы нет — это не `partial`, это сигнал к **новому типу** (OOA&D).
+### OK (strong)
 
-## When `partial` is wrong
+**Generated injection point** — source generator / designer / `.g.cs` вставляет в **один** тип; руками правим только разрешённый `partial` слой.
+
+### Weak (discuss, не default)
+
+Hand `partial` на **своём** типе — только **организация** одной class (team-owned файлы). Не seam. При росте → **новый тип** (OOA&D), не ещё `Foo.Bar.cs`.
+
+### Framework extension — **не** `partial`
+
+Граница с фреймворком → **inheritance + `abstract` / `virtual` / `override`** (или interfaces). Не `partial` на framework types; не «дописать» их класс.
+
+```csharp
+public partial class MyController : Controller  // partial = твоя организация
+{
+    public override IActionResult Index() { ... }  // расширение = override
+}
+```
+
+### Wrong
 
 - **Metric peel:** `TypeName.Something.cs` ради `file_lines` / SoftFL — `partial ≠ split`.
-- **Partial family:** много dotted partials без framework/gen boundary (`partial_family` gate).
+- **Partial family:** много dotted partials без gen boundary (`partial_family` gate).
 - **Fake seam:** ещё один `Foo.Bar.cs` вместо extract class / polymorphism / facade.
 
 Depth: `playbook-ooad-agent-operational-v1.md` · habitat `quality` domain (`partial_family` tooth).
