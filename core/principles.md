@@ -37,11 +37,19 @@ Operational defaults for agents **before first edit**. Not a textbook — pointe
 
 - Vertical slice that ships; no «v1 stub» unless explicitly requested.
 
+## Proven building blocks (no bicycle inventing)
+
+- For **solved problems** (CLI argv, JSON/XML, HTTP client, logging, config, crypto primitives) — take a **battle-tested library, platform API, or org default**; do not hand-roll loops and parsers «потому что быстрее написать».
+- **Check first:** `guiders-style` (lang surfaces), project `.cdp/canon.md`, dogfooded repos in the federation — reuse before adding a new pattern.
+- **Hand-roll only when:** no acceptable fit, hard constraint (license, size, AOT, air-gap), or logic is genuinely domain-specific with no stable off-the-shelf piece.
+- New dependency → pinned version, license OK, one line *why not roll-your-own* (README or ADR). Depth: lang files (e.g. `csharp/cli.md`) list org picks per area.
+
 ## When to go deeper
 
 | Need | KB / tool |
 |------|-----------|
 | OOA&D playbook | `playbook-ooad-agent-operational-v1.md` |
 | C# mechanics | `guiders-style/csharp/design-patterns.md` |
+| C# CLI / argv | `guiders-style/csharp/cli.md` |
 | Language habits | `guiders-style/{lang}/writing-surface.md` |
 | This repo | `{scm}/.cdp/canon.md` |

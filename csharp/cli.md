@@ -2,11 +2,11 @@
 
 rev: 2026-08-26
 pin: `guiders-style@v1`
-see: `writing-surface.md` · dogfood: `AIGuiders.DotnetTools.PublishFixedTarget`
+see: `../core/principles.md` (proven building blocks) · `writing-surface.md` · dogfood: `AIGuiders.DotnetTools.PublishFixedTarget`
 
 ## Rule
 
-**Do not hand-roll `Environment.GetCommandLineArgs()` loops** for tools, scripts, or hosts with more than a trivial argv (one positional, no options). Use a CLI library — parsing, help, and option/positional separation are solved problems; manual loops regress (e.g. option values eaten as positionals).
+**Do not hand-roll `Environment.GetCommandLineArgs()` loops** — CLI parsing is a solved problem; see org principle *Proven building blocks* in `core/principles.md`.
 
 ## Default (org)
 
