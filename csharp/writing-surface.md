@@ -14,6 +14,7 @@ See also: `design-patterns.md` (OOA&D/SOLID → C# mechanics) · `../core/princi
 - XML docs on public plugin surfaces; internal = minimal
 - Tests: xunit; name `Method_Scenario_Expectation`
 - Human View (Forge): Kit + Razor — see `agent-forge/.cdp/canon.md`
+- CLI tools: **Ookii.CommandLine** — see `cli.md` (no hand-rolled argv loops)
 
 ## Don't
 

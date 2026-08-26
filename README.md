@@ -17,6 +17,7 @@ core/
 csharp/
   writing-surface.md
   design-patterns.md
+  cli.md              # argv parsing — Ookii default; no hand-roll loops
 python/           # (future)
 powershell/       # (future)
 ```

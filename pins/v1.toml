@@ -16,4 +16,9 @@ layer = "org-lang-design"
 path = "csharp/design-patterns.md"
 lang = "csharp"
 
+[[files]]
+layer = "org-lang-cli"
+path = "csharp/cli.md"
+lang = "csharp"
+
 # Future langs: duplicate org-lang + org-lang-design under python/, powershell/, …
