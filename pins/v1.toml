@@ -1,0 +1,19 @@
+# guiders-style@v1 pin manifest
+
+rev = "2026-08-26"
+
+[[files]]
+layer = "org-core"
+path = "core/principles.md"
+
+[[files]]
+layer = "org-lang"
+path = "csharp/writing-surface.md"
+lang = "csharp"
+
+[[files]]
+layer = "org-lang-design"
+path = "csharp/design-patterns.md"
+lang = "csharp"
+
+# Future langs: duplicate org-lang + org-lang-design under python/, powershell/, …

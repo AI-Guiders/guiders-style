@@ -9,11 +9,12 @@ Host path: `cdp-mcp.toml` → `[canon].guiders_style_root`.
 ## Layout
 
 ```text
-core/           # cross-lang (future)
-csharp/         # C# / .NET Human View + MCP
-python/         # (future)
+pins/v1.toml      # @v1 manifest (traceability)
+core/
+  principles.md   # OOA&D, KISS, DRY, SOLID — org operational (~600 tok route)
+csharp/
+  writing-surface.md
+  design-patterns.md
+python/           # (future)
+powershell/       # (future)
 ```
-
-## csharp
-
-- `writing-surface.md` — operational slice (~800 token budget in route)

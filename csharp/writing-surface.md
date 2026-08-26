@@ -5,6 +5,8 @@ pin: `guiders-style@v1`
 
 Normative ADRs stay in product repos. This file = cross-repo C# habits for agents.
 
+See also: `design-patterns.md` (OOA&D/SOLID → C# mechanics) · `../core/principles.md` (org principles).
+
 ## Do
 
 - Nullable enabled; annotate public API; `async` + `ConfigureAwait` policy per host (CDP tests: omit ConfigureAwait)
